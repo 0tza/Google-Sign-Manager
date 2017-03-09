@@ -1,0 +1,44 @@
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<div class="row clearfix">
+					<div class="col-md-8 column">
+						<h3>
+							Bienvenue
+							<p class="text-muted"> {{name}} <br> <small> {{domain}} </small></p> 
+							<!-- <button class="btn btn-danger" type="button" href="#/" ng-click="signOut()">Sign out</button> -->			
+						</h3>
+					</div>
+					<div class="col-md-4 column">					
+						<img alt="140x140" ng-src="{{picture}}" class="img-circle" />
+					</div>
+				</div>
+				<br>			
+				<div class="jumbotron">
+
+					<div class="btn-group btn-group-lg btn-group-horizontal">
+						<a class="btn btn-default" type="button" ng-href="#/addsign">
+							<em class="glyphicon glyphicon-plus"></em> Ajouter Signature</a> 
+							<a class="btn btn-success" type="button" ng-href="#/setsign">
+								<em class="glyphicon glyphicon-align-center"></em> Assigner Signature</a> 
+							</div>
+
+
+						</div>
+
+					</div>
+					<div class="col-md-6 column">
+						<h5> Votre code enregistré est : {{oAcode}} </h5>
+						<div class="input-group">
+							<input placeholder="Code" type="text" class="form-control" aria-label="" ng-model="code">
+							<div class="input-group-btn">
+								<button type="button" class="btn btn-primary btn-default" ng-click="saveOA()">Valider</button>
+								
+							</div>
+							
+						</div>
+						<small>Insérez le code qui vous a été fournis par mail par l'administrateur de l'application</small>
+						<br><br>
+					</div>
+				</div>
+			</div>

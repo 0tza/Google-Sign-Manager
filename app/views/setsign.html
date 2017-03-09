@@ -1,0 +1,93 @@
+<div class="container">
+	<h3>Assignez vos signatures</h3>
+	<p class="text-primary">Cliquez sur une des signatures enregistrées et assignez les à vos employés.</p>
+	
+	<div class="row clearfix">
+
+		<div class="alert alert-success collapse" role="alert" id="signAlert"> Vous avez selectionné la signature : "{{titreSignature}}"
+			<!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button> -->
+		</div>
+		<div class="alert alert-danger alert-dismissible collapse" role="alert" id="errorAlert"> 
+			{{msgError}}
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="col-md-12 column">
+			<div class="row clearfix">
+				<div class="col-md-3 column">
+					<!-- Partie gauche -->
+
+					<div class="list-group">
+						<a href="" class="list-group-item active">
+							Signatures 
+						</a>
+						<a href="" ng-click="refresh(doc)" ng-repeat="doc in modeles" class="list-group-item" >{{doc.titre}}</a>
+					</div>
+				</div>
+
+				<!-- Partie droite -->
+				<div class="col-md-9">
+					<div class="container">
+						<div class="row">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4>
+										Employés de l'entreprise		
+									</h4>
+								</div>
+								<table class="table table-fixed">
+									<thead>
+										<tr>
+											<th class="col-xs-2"></th><th class="col-xs-6">Nom</th>
+											<th class="col-xs-4">Email</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="client in clients">
+											<td class="col-xs-2">													
+												<input checklist-model="usersToChange" checklist-value="client" checklist-change="imChanged()" type="checkbox">
+											</td>
+											<td class="col-xs-6">{{client.name.fullName}}</td>
+											<td class="col-xs-4">{{client.primaryEmail}}</td>
+										</tr>
+									</tbody>
+
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				
+
+			</div>
+
+		</div>
+		<div class="container">
+			<p>
+				<div class="input-group">
+					<input placeholder="Fonction" type="text" class="form-control" aria-label="" ng-model="varTri">
+					<div class="input-group-btn">
+						<!-- Button and dropdown menu -->
+						<button type="button" class="btn btn-warning btn-default" ng-click="triUsers(varTri)">Trier par fonction</button>
+						<button type="button" class="btn btn-success btn-default" ng-click="sendSigns2()">Affecter</button>
+						<button type="button" class="btn btn-primary btn-small" ng-click="checkAll()">Tout selectionner</button>
+						<button type="button" class="btn btn-primary btn-small" ng-click="uncheckAll()">Tout de-selectionner</button>
+
+					</div>
+				</div>
+
+			</p>
+
+			<p class="text-center">
+				
+				{{compteRendu}}
+			</p>
+				
+			</div>
+
+		</div>
+	</div>

@@ -1,0 +1,63 @@
+<div class="container">
+		
+		<div class="alert alert-danger alert-dismissible collapse" role="alert" id="errorAlert"> 
+		{{msgError}}
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+
+		<div class="col-md-12 column">
+			<div class="row clearfix">
+				<div class="col-md-9 column">
+					<ul class="list-group">
+						<a href="" ng-click="refresh(doc)" ng-repeat="doc in modeles" class="list-group-item" >{{doc.titre}}</a>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+</div>
+	<!--
+	<form class="form-inline">
+
+		<div class="checkbox">
+			<label>
+				Label<input type="checkbox"/>
+			</label>
+		</div>
+
+		<div class="checkbox">
+			<label>
+				Label<input type="checkbox"/>
+			</label>
+		</div>
+
+		<div class="checkbox">
+			<label>
+				Label<input type="checkbox"/>
+			</label>
+		</div>
+	</form> -->
+	<div class="container">
+		<form>
+			<div class="form-group">
+				<input type="text" class="form-control" id="" placeholder="Titre" ng-model="titreSignature">
+			</div>
+		</form>
+		<br>
+
+		<small> Utiliser les tags [nom] [prenom] [telephone] [mail] et [fonction] pour automatiser</small>
+		<form method="post">
+			<textarea ui-tinymce="tinymceOptions" ng-model="tinymceModel"></textarea>
+		</form>
+	</form>
+
+</br>
+<p class="text-center">
+	<button type="button" ng-click="addModele()" class="btn btn-primary btn-lg">Ajouter</button>
+	<!-- <button type="button" ng-click="" class="btn btn-success btn-lg">Enregistrer</button> -->
+	<button type="button" ng-click="deleteModele()" class="btn btn-danger btn-lg">Supprimer</button>
+</p>
+
+</div>
